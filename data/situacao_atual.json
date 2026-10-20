@@ -1,0 +1,183 @@
+{
+  "atualizado": "2026-10-19",
+  "ebaps_poa": {
+    "fonte": "DMAE · Relatório EBAPs e geradores",
+    "data": "2026-06-10",
+    "url": "https://prefeitura.poa.br/sites/default/files/usu_doc/sites/dmae/RELAT%C3%93RIO%20EBAPS%20E%20GERADORES%20-%20JUN26.docx_0.pdf",
+    "capacidade_global": 95,
+    "por_numero": {
+      "01": {
+        "cap": 100,
+        "gerador": false
+      },
+      "02": {
+        "cap": 100,
+        "gerador": false
+      },
+      "03": {
+        "cap": 100,
+        "gerador": true
+      },
+      "04": {
+        "cap": 100,
+        "gerador": false
+      },
+      "05": {
+        "cap": 100,
+        "gerador": true
+      },
+      "06": {
+        "cap": 100,
+        "gerador": true
+      },
+      "07": {
+        "cap": 100,
+        "gerador": true
+      },
+      "08": {
+        "cap": 92,
+        "gerador": false
+      },
+      "09": {
+        "cap": 100,
+        "gerador": false
+      },
+      "10": {
+        "cap": 100,
+        "gerador": true
+      },
+      "11A": {
+        "cap": 68,
+        "gerador": true
+      },
+      "11B": {
+        "cap": 100,
+        "gerador": true
+      },
+      "12": {
+        "cap": 100,
+        "gerador": false
+      },
+      "13": {
+        "cap": 100,
+        "gerador": true
+      },
+      "14": {
+        "cap": 58,
+        "gerador": false
+      },
+      "15": {
+        "cap": 100,
+        "gerador": false
+      },
+      "16": {
+        "cap": 94,
+        "gerador": true
+      },
+      "17": {
+        "cap": 100,
+        "gerador": false
+      },
+      "18": {
+        "cap": 75,
+        "gerador": false
+      },
+      "19": {
+        "cap": 100,
+        "gerador": false
+      },
+      "20": {
+        "cap": 100,
+        "gerador": false
+      },
+      "21": {
+        "cap": 100,
+        "gerador": false
+      },
+      "22": {
+        "cap": 100,
+        "gerador": true
+      }
+    },
+    "nomes": {
+      "Vila Farrapos": "08",
+      "Vila Minuano": "20"
+    }
+  },
+  "fatos": [
+    {
+      "tipo": "falta",
+      "titulo": "5 casas de bombas funcionando pela metade",
+      "texto": "A casa de bombas 14 (Polícia Federal) opera com 58% da força; a 11A com 68%; a 18 (Centro) com 75%.",
+      "data": "2026-06-10",
+      "fonte": "DMAE",
+      "url": "https://prefeitura.poa.br/sites/default/files/usu_doc/sites/dmae/RELAT%C3%93RIO%20EBAPS%20E%20GERADORES%20-%20JUN26.docx_0.pdf"
+    },
+    {
+      "tipo": "falta",
+      "titulo": "13 de 23 casas de bombas sem gerador próprio",
+      "texto": "Em 2024 as bombas pararam quando faltou luz. O relatório do DMAE lista gerador em 10 delas. Em abril a prefeitura falou em 17. Qual número é o certo?",
+      "data": "2026-06-10",
+      "fonte": "DMAE e Extra Classe",
+      "url": "https://www.extraclasse.org.br/?p=124063"
+    },
+    {
+      "tipo": "falta",
+      "titulo": "Dique do Sarandi, trecho 3: obra não começou",
+      "texto": "Cerca de 500 famílias do Sarandi ainda moram na área de inundação, esperando reassentamento.",
+      "data": "2026-04-09",
+      "fonte": "Extra Classe",
+      "url": "https://www.extraclasse.org.br/?p=124063"
+    },
+    {
+      "tipo": "falta",
+      "titulo": "Casas de bombas 5, 6, 8 e 10 sem data para terminar",
+      "texto": "Atendem Humaitá, Anchieta, Vila Farrapos e Sarandi. Contrato assinado, obra sem prazo de entrega. As 12, 17 e 18 ainda esperam o início das obras.",
+      "data": "2026-04-09",
+      "fonte": "Extra Classe",
+      "url": "https://www.extraclasse.org.br/?p=124063"
+    },
+    {
+      "tipo": "prazo",
+      "titulo": "Comportas 9, 11 e 12",
+      "texto": "Fechamento da 9 e troca da 11 e da 12, R$ 12 milhões.",
+      "prazo": "2026-06-30",
+      "data": "2026-04-09",
+      "fonte": "Extra Classe",
+      "url": "https://www.extraclasse.org.br/?p=124063"
+    },
+    {
+      "tipo": "prazo",
+      "titulo": "Energia exclusiva para 22 casas de bombas",
+      "texto": "Linhas dedicadas da CEEE Equatorial, R$ 18 milhões.",
+      "prazo": "2026-12-31",
+      "data": "2026-04-09",
+      "fonte": "Extra Classe",
+      "url": "https://www.extraclasse.org.br/?p=124063"
+    },
+    {
+      "tipo": "feito",
+      "titulo": "4 comportas fechadas de vez",
+      "texto": "Comportas 8, 10, 13 e 14 da Av. Castelo Branco viraram concreto. Foi pela 14 que a água entrou no Humaitá e no Farrapos em 2024.",
+      "data": "2026-01-22",
+      "fonte": "DMAE",
+      "url": "https://prefeitura.poa.br/dmae/noticias/quatro-comportas-do-sistema-de-protecao-contra-cheias-sao-extintas"
+    },
+    {
+      "tipo": "feito",
+      "titulo": "Dique do Sarandi, trecho 2, concluído",
+      "texto": "Mais de R$ 12 milhões. Dique da Fiergs reforçado e elevado a 5,80 m.",
+      "data": "2026-01-31",
+      "fonte": "Extra Classe",
+      "url": "https://www.extraclasse.org.br/?p=124063"
+    }
+  ],
+  "clima": {
+    "titulo": "Primavera de 2026 com El Niño muito forte",
+    "texto": "Chuva até 200 mm acima da média no RS de outubro a dezembro. É hora de se preparar.",
+    "fonte": "INMET",
+    "data": "2026-09-20",
+    "url": "https://portal.inmet.gov.br/noticias/primavera-come%C3%A7a-com-chuvas-acima-da-m%C3%A9dia-no-centro-sul-e-abaixo-da-m%C3%A9dia-em-partes-do-norte-e-nordeste",
+    "ate": "2026-12-31"
+  }
+}

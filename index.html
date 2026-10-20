@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GuGa · Guardião Gaúcho</title>
+<meta name="description" content="Enchentes no RS: veja se a sua casa alaga, marque bueiros entupidos, peça socorro e cobre as autoridades.">
+<meta name="theme-color" content="#232421">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/guga.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/guga-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="GuGa">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--GG:CSS-->
+<link rel="stylesheet" href="vendor/fonts.css">
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
+<link rel="stylesheet" href="app.css">
+<!--/GG:CSS-->
+</head>
+<body>
+<!--GG:BODY-->
+<div class="app">
+  <header class="topo">
+    <a class="marca" href="#inicio" data-nav="inicio" aria-label="GuGa, início">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><clipPath id="lgc"><path d="M32 6.5 52.6 12.3V30c0 12.6-8.4 21.2-20.6 26.8C19.8 51.2 11.4 42.6 11.4 30V12.3Z"/></clipPath></defs><path d="M32 4 55 10.5V30c0 14-9.5 23.5-23 29.5C18.5 53.5 9 44 9 30V10.5Z" fill="#232421"/><g clip-path="url(#lgc)"><path d="M6 45 13 41c4.2-2.4 7.8-7.3 10.8-12.6 1.9-3.3 3.8-5.6 6.2-6.6V64H6Z" fill="#2f86c8"/><path d="M10.5 42.6c4.6-2.6 8.4-7.4 11.6-13.4" stroke="#a9d6f5" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M36 45.5c4.8-1.2 9.8-1.2 20 0V64H36Z" fill="#2f86c8" opacity=".72"/></g><path d="m24.2 19.6 2.4-2.6.8 3.2zM19.6 23.4l1.9-2 .7 2.6zM27.6 14.4l1.8-2 .6 2.5z" fill="#6fb6ea"/><rect x="29.6" y="20.5" width="6.2" height="38" fill="#c4b28a"/><rect x="28" y="17.4" width="9.4" height="3.6" fill="#e3d7b6"/><path d="M29.6 31h6.2M29.6 39h6.2M29.6 47h6.2" stroke="#8c7a52" stroke-width="1.3"/><path d="M32 4 55 10.5V30c0 14-9.5 23.5-23 29.5C18.5 53.5 9 44 9 30V10.5Z" fill="none" stroke="#c4b28a" stroke-width="2.6" stroke-linejoin="miter"/></svg>
+      <span><b>Gu<em>Ga</em></b><small>Guardião Gaúcho</small></span>
+    </a>
+    <a class="nivel" id="chip-nivel" href="#inicio" data-nav="inicio" aria-live="polite"><span class="pt"></span>Guaíba —</a>
+    <span class="rede" id="chip-rede"></span>
+    <button class="btn-icone" id="btn-letra" aria-label="Aumentar a letra">A+</button>
+  </header>
+
+  <nav class="trilho" aria-label="Seções">
+    <a href="#inicio" data-nav="inicio"><span class="ico" data-ic="ondas" data-tam="26"></span>Hoje</a>
+    <a href="#casa" data-nav="casa"><span class="ico" data-ic="casa" data-tam="26"></span>Minha casa</a>
+    <a href="#mapa" data-nav="mapa"><span class="ico" data-ic="mapa" data-tam="26"></span>Mapa</a>
+    <a href="#relatar" data-nav="relatar" class="marcar"><span class="ico" data-ic="camera" data-tam="24"></span>Avisar</a>
+    <a href="#de-olho" data-nav="de-olho"><span class="ico" data-ic="olho" data-tam="26"></span>De olho</a>
+    <a href="#guia" data-nav="guia"><span class="ico" data-ic="lista" data-tam="26"></span>O que fazer</a>
+    <hr>
+    <a href="#morro" data-nav="morro"><span class="ico" data-ic="morro" data-tam="26"></span>Morro 3D</a>
+    <a href="#resgate" data-nav="resgate"><span class="ico" data-ic="boia" data-tam="26"></span>Resgate</a>
+    <p class="assinatura">powered by<br><b>Fortsy Tech Solutions</b></p>
+  </nav>
+
+  <main class="palco" id="palco">
+    <!-- HOJE (INÍCIO) -->
+    <section class="vista" id="v-inicio" aria-label="Hoje">
+      <div class="conteudo estreito">
+        <div class="agora" id="agora"></div>
+        <a class="minha-casa" href="#casa" data-nav="casa" id="inicio-casa"></a>
+        <div class="tiles">
+          <button class="tile sos" data-relatar="sos"><span class="bola" data-ic="boia" data-tam="38"></span>Pedir socorro</button>
+          <a class="tile guia" href="#guia" data-nav="guia"><span class="bola" data-ic="lista" data-tam="36"></span>O que fazer</a>
+          <button class="tile" data-simular><span class="bola" data-ic="regua" data-tam="36"></span>Simular cheia</button>
+          <a class="tile avisar" href="#de-olho" data-nav="de-olho"><span class="bola" data-ic="olho" data-tam="36"></span>De olho na rua</a>
+        </div>
+        <div class="enviar-mini">
+          <button class="enviar-txt" data-compartilhar><span class="ic" data-ic="compartilhar" data-tam="22"></span><span>Mandar alerta para a família<small>Ver a imagem antes</small></span></button>
+          <button class="redondo zap" data-enviar="whatsapp" aria-label="Mandar no WhatsApp"><span data-ic="whatsapp" data-tam="22"></span></button>
+          <button class="redondo insta" data-enviar="instagram" aria-label="Mandar no Instagram"><span data-ic="instagram" data-tam="20"></span></button>
+        </div>
+        <div id="inicio-instalar"></div>
+        <div id="inicio-tempo"></div>
+        <div class="tels" id="inicio-tels"></div>
+        <div id="inicio-clima"></div>
+        <p class="assinatura">powered by <b>Fortsy Tech Solutions</b></p>
+      </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="vista vista-mapa" id="v-mapa" hidden aria-label="Mapa">
+      <div id="mapa">
+        <div class="mapa-mira" id="mira" hidden><div>Toque no mapa</div></div>
+        <div class="mapa-legenda" aria-hidden="true"><span><i style="background:var(--crit)"></i>Problema</span><span><i style="background:var(--accent)"></i>Resolvido</span><span><i class="q" style="background:var(--water);opacity:.5"></i>Alagou em 2024</span></div>
+      </div>
+      <aside class="lateral">
+        <div class="modos" role="group" aria-label="Modo do mapa"><button data-modo="hoje" aria-pressed="true">Hoje</button><button data-modo="simular" aria-pressed="false">Simular cheia</button></div>
+        <div id="lat-sim" hidden></div>
+        <div id="lat-hoje" class="pilha" style="gap:16px">
+        <div id="resumo-area" class="pilha"></div>
+        <button class="btn primario grande" data-relatar=""><span data-ic="camera" data-tam="28"></span>Avisar um problema</button>
+        <details><summary>Escolher cidade e bairro</summary><div class="filtros" style="margin-top:6px">
+          <label class="campo">Cidade<select id="f-cidade"><option>Porto Alegre</option></select></label>
+          <label class="campo">Bairro<select id="f-bairro"><option value="">Todos</option></select></label>
+        </div></details>
+        <details><summary>O que mostrar no mapa</summary><div class="camadas" id="camadas"></div></details>
+        <details><summary>Últimas marcações</summary><div class="lista-relatos" id="lista-relatos"></div></details>
+        </div>
+        <p class="assinatura">powered by <b>Fortsy Tech Solutions</b></p>
+      </aside>
+    </section>
+
+    <!-- MAPA DA ESPERA -->
+    <section class="vista" id="v-vergonha" hidden aria-label="De Olho na Rua">
+      <div class="conteudo" id="vergonha"></div>
+    </section>
+
+    <!-- MINHA CASA -->
+    <section class="vista" id="v-casa" hidden aria-label="Minha casa">
+      <div class="conteudo" style="max-width:1000px">
+        <div class="titulo"><h2>Minha casa</h2><p id="casa-sub">Quando a água chega e até onde sobe.</p></div>
+        <div id="casa-busca" class="pilha">
+        <form id="casa-form" class="linha busca-casa" role="search" autocomplete="off">
+          <label class="sr" for="casa-q">Endereço</label>
+          <div class="busca-campo">
+            <span class="lupa" data-ic="lupa" data-tam="24"></span>
+            <input type="search" id="casa-q" placeholder="Rua e número" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search">
+            <div id="casa-sug" class="sugestoes" hidden></div>
+          </div>
+          <button class="btn primario" type="submit">Buscar</button>
+        </form>
+        <p class="busca-dica mut">Comece a digitar e escolha a rua. Exemplo: <b>dr barcelos 200</b>.</p>
+        <div class="botoes-local">
+          <button class="btn" id="casa-gps" type="button"><span data-ic="gps" data-tam="26"></span>Estou em casa</button>
+          <button class="btn" id="casa-mapa" type="button"><span data-ic="alfinete" data-tam="26"></span>Marcar no mapa</button>
+        </div>
+        <details><summary>Não sei o endereço</summary><label class="campo" style="margin-top:6px"><span class="sr">Bairro</span><select id="casa-bairro"></select></label></details>
+        <div id="casa-opcoes" class="opcoes" style="grid-template-columns:1fr"></div>
+        </div>
+        <div id="casa-local"></div>
+        <div id="casa-resultado" class="pilha" style="gap:16px"></div>
+        <p class="assinatura">powered by <b>Fortsy Tech Solutions</b></p>
+      </div>
+    </section>
+
+    <!-- MORRO 3D -->
+    <section class="vista" id="v-morro" hidden aria-label="Morro 3D">
+      <div class="conteudo">
+        <div class="titulo"><span class="faixa"><span>Morro 3D</span></span><h2>Por que a água desce o morro com tanta força</h2><p>Siga os 4 passos. Toque em qualquer lugar do morro para medir.</p></div>
+        <div class="passos-morro" id="passos-morro" role="group" aria-label="Passos da explicação"></div>
+        <div class="morro-grid">
+          <div class="pilha">
+            <div class="palco3d" id="palco3d"><div class="hud" id="morro-status"></div></div>
+            <p class="legenda-morro" id="legenda-morro" aria-live="polite"></p>
+          </div>
+          <div class="pilha">
+            <div class="card" id="morro-fisica"></div>
+            <label class="campo">Morro<select id="morro-sel"></select></label>
+            <div class="linha"><a class="btn" id="morro-earth" href="https://earth.google.com/web/" target="_blank" rel="noopener">Ver no Google Earth</a></div>
+            <details><summary>Ajustar a chuva e o terreno</summary>
+              <div class="pilha" style="margin-top:8px">
+                <label class="campo">Chuva: <span class="mono" id="m-chuva-v">60 mm por hora</span><input type="range" id="m-chuva" min="10" max="120" step="5" value="60"></label>
+                <div class="opcoes" style="grid-template-columns:1fr">
+                  <label class="opcao"><input type="radio" name="m-uso" value="mata">Morro com mata</label>
+                  <label class="opcao"><input type="radio" name="m-uso" value="misto">Casas com quintal</label>
+                  <label class="opcao"><input type="radio" name="m-uso" value="cidade" checked>Asfalto e telhados</label>
+                </div>
+                <button class="btn" id="morro-kml">Baixar para o Google Earth (KML)</button>
+              </div>
+            </details>
+            <details><summary>Detalhes técnicos</summary><div id="morro-tecnico" class="mut peq" style="margin-top:8px"></div></details>
+          </div>
+        </div>
+        <p class="assinatura">powered by <b>Fortsy Tech Solutions</b></p>
+      </div>
+    </section>
+
+    <!-- GUIA -->
+    <section class="vista" id="v-guia" hidden aria-label="O que fazer">
+      <div class="conteudo estreito">
+        <div class="titulo"><h2>O que fazer</h2><p>Escolha o momento. Toque em <b>Ouvir</b>, no canto da tela, para escutar.</p></div>
+        <div class="fases" role="tablist" id="guia-fases"></div>
+        <div class="card"><h3 id="guia-titulo">Passos</h3><div id="guia-passos"></div>
+          <div id="guia-zap" class="pilha"></div></div>
+        <div class="tels" id="guia-tels"></div>
+        <details class="card"><summary>Receber alertas oficiais de graça</summary><div class="pilha" id="guia-alertas" style="margin-top:8px"></div></details>
+        <details class="card"><summary>Plano da família</summary><div id="guia-plano" class="pilha" style="margin-top:8px"></div></details>
+        <p class="assinatura">powered by <b>Fortsy Tech Solutions</b></p>
+      </div>
+    </section>
+
+    <!-- RESGATE -->
+    <section class="vista" id="v-resgate" hidden aria-label="Resgate">
+      <div class="conteudo">
+        <div class="titulo"><span class="faixa"><span>Resgate</span></span><h2>Fila de resgate</h2><p>Pedidos de socorro em ordem de prioridade. A regra é pública.</p></div>
+        <div id="painel-resgate" class="pilha"></div>
+        <p class="assinatura">powered by <b>Fortsy Tech Solutions</b></p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="barra" aria-label="Seções">
+    <a href="#inicio" data-nav="inicio"><span class="ico" data-ic="ondas" data-tam="26"></span>Hoje</a>
+    <a href="#casa" data-nav="casa"><span class="ico" data-ic="casa" data-tam="26"></span>Casa</a>
+    <a href="#mapa" data-nav="mapa"><span class="ico" data-ic="mapa" data-tam="26"></span>Mapa</a>
+    <a href="#relatar" data-nav="relatar" class="marcar"><span class="ico" data-ic="camera" data-tam="24"></span>Avisar</a>
+    <a href="#mais" data-nav="mais"><span class="ico" data-ic="mais" data-tam="26"></span>Mais</a>
+  </nav>
+
+  <!-- botões flutuantes: ouvir a tela e pedir socorro, sempre no mesmo lugar -->
+  <div class="fabs">
+    <button class="fab sos" data-relatar="sos" aria-label="Pedir socorro"><span data-ic="boia" data-tam="26"></span><b>SOS</b></button>
+    <button class="fab ouvir btn-ouvir" id="btn-ouvir" aria-pressed="false">Ouvir</button>
+  </div>
+</div>
+
+<!-- Marcar / pedir socorro -->
+<div class="folha" id="folha-relatar" hidden role="dialog" aria-modal="true" aria-labelledby="relatar-titulo">
+  <div class="corpo" tabindex="-1">
+    <div class="cab"><h2 id="relatar-titulo">Marcar</h2><button class="btn-icone" id="relatar-fechar" aria-label="Fechar">✕</button></div>
+    <div class="passo-ind" id="relatar-passos"></div>
+    <div id="relatar-conteudo" class="pilha"></div>
+    <div class="linha" id="relatar-acoes"></div>
+  </div>
+</div>
+
+<!-- Cobrar quem resolve -->
+<div class="folha" id="folha-cobrar" hidden role="dialog" aria-modal="true" aria-labelledby="cobrar-titulo">
+  <div class="corpo">
+    <div class="cab"><h2 id="cobrar-titulo">Cobrar quem resolve</h2><button class="btn-icone" data-fechar aria-label="Fechar">✕</button></div>
+    <div id="cobrar-conteudo" class="pilha"></div>
+  </div>
+</div>
+
+<!-- Colocar na tela do celular -->
+<div class="folha" id="folha-instalar" hidden role="dialog" aria-modal="true" aria-labelledby="instalar-titulo">
+  <div class="corpo">
+    <div class="cab"><h2 id="instalar-titulo">GuGa na tela do celular</h2><button class="btn-icone" data-fechar aria-label="Fechar">✕</button></div>
+    <div id="instalar-conteudo" class="pilha"></div>
+  </div>
+</div>
+
+<!-- Encaminhar o alerta -->
+<div class="folha" id="folha-compartilhar" hidden role="dialog" aria-modal="true" aria-labelledby="comp-titulo">
+  <div class="corpo">
+    <div class="cab"><h2 id="comp-titulo">Mandar para a família</h2><button class="btn-icone" data-fechar aria-label="Fechar">✕</button></div>
+    <div id="comp-conteudo" class="pilha"></div>
+  </div>
+</div>
+
+<!-- Mais -->
+<div class="folha" id="folha-mais" hidden role="dialog" aria-modal="true" aria-label="Mais">
+  <div class="corpo">
+    <div class="cab"><h2>Mais</h2><button class="btn-icone" data-fechar aria-label="Fechar">✕</button></div>
+    <div class="opcoes" style="grid-template-columns:1fr">
+      <a class="opcao" href="#guia" data-nav="guia"><span class="ic" data-ic="lista" data-tam="26"></span>O que fazer</a>
+      <a class="opcao" href="#de-olho" data-nav="de-olho"><span class="ic" data-ic="olho" data-tam="26"></span><span>De olho na rua<small>Problemas marcados e cobrança</small></span></a>
+      <button class="opcao" type="button" data-compartilhar><span class="ic" data-ic="whatsapp" data-tam="26"></span>Mandar alerta para a família</button>
+      <a class="opcao" href="#morro" data-nav="morro"><span class="ic" data-ic="morro" data-tam="26"></span><span>Morro 3D<small>Por que a água desce com tanta força</small></span></a>
+      <a class="opcao" href="#resgate" data-nav="resgate"><span class="ic" data-ic="boia" data-tam="26"></span>Fila de resgate</a>
+      <button class="opcao" id="mais-instalar" type="button"><span class="ic" data-ic="baixar" data-tam="26"></span><span>GuGa na tela do celular<small>Android e iPhone</small></span></button>
+    </div>
+    <div id="acesso-equipe" class="pilha"></div>
+    <details><summary>Letra, cores e acesso</summary><div class="pilha" style="margin-top:6px">
+      <label class="opcao"><input type="checkbox" id="cfg-contraste">Contraste alto</label>
+      <label class="campo">Cores<select id="cfg-tema"><option value="light">Claro</option><option value="dark">Escuro</option></select></label>
+      <p class="mut peq">Seu acesso: <b id="cfg-papel">Cidadão</b></p>
+    </div></details>
+    <p class="mut peq">O GuGa não substitui a Defesa Civil (199) nem os Bombeiros (193).</p>
+    <p class="assinatura">powered by <b>Fortsy Tech Solutions</b></p>
+  </div>
+</div>
+<!--/GG:BODY-->
+
+<!--GG:JS-->
+<script src="vendor/maplibre-gl.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/icones.js"></script>
+<script src="js/voz.js"></script>
+<script src="js/data.js"></script>
+<script src="js/modelo.js"></script>
+<script src="js/backend.js"></script>
+<script src="js/live.js"></script>
+<script src="js/mapa.js"></script>
+<script src="js/busca.js"></script>
+<script src="js/casa.js"></script>
+<script src="js/simulador.js"></script>
+<script src="js/relatar.js"></script>
+<script src="js/morro.js"></script>
+<script src="js/guia.js"></script>
+<script src="js/cobrar.js"></script>
+<script src="js/compartilhar.js"></script>
+<script src="js/vergonha.js"></script>
+<script src="js/resgate.js"></script>
+<script src="js/inicio.js"></script>
+<script src="js/instalar.js"></script>
+<script src="js/app.js"></script>
+<!--/GG:JS-->
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "name": "GuGa · Guardião Gaúcho",
+  "short_name": "GuGa",
+  "description": "Mapa vivo de cheias do RS: bueiros, até onde a água chega na sua casa, socorro e transparência.",
+  "lang": "pt-BR",
+  "start_url": "./#inicio",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#dcddd8",
+  "theme_color": "#232421",
+  "icons": [
+    {
+      "src": "icons/guga-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/guga-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/guga-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/guga-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Pedir socorro",
+      "url": "./#relatar"
+    },
+    {
+      "name": "Minha casa",
+      "url": "./#casa"
+    }
+  ]
+}
